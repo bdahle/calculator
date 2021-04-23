@@ -1,6 +1,6 @@
 let displayValue = 0;
 
-const numberButtons = document.querySelectorAll(".numberButtons button");
+const numberButtons = document.querySelectorAll(".number-buttons button");
 numberButtons.forEach((button) => {
   button.addEventListener("click", displayNumber);
 });
