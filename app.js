@@ -6,7 +6,8 @@ numberButtons.forEach((button) => {
 });
 
 function displayNumber(e) {
-  console.log(e.target.textContent);
+  displayValue = Number(e.target.textContent);
+  document.getElementById("displayText").innerText = displayValue;
 }
 
 function add(a, b) {
