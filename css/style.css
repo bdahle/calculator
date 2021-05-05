@@ -1,0 +1,15 @@
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(5, 100px);
+}
+
+.button-ac {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.button-equals {
+  grid-column-start: 3;
+  grid-column-end: 5;
+}

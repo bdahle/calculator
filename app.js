@@ -1,4 +1,4 @@
-let displayValue = 0;
+let currentAction = subtract;
 
 const display = document.querySelector(".display");
 
@@ -7,7 +7,7 @@ keys.addEventListener("click", (e) => {
   if (e.target.matches("button")) {
     const key = e.target;
     const action = key.dataset.action;
-    const displayValue = display.textContent;
+    let displayValue = display.textContent;
     if (!action) {
       const keyNumber = key.textContent;
       if (displayValue === "0") {
@@ -16,10 +16,16 @@ keys.addEventListener("click", (e) => {
         display.textContent = displayValue + keyNumber;
       }
     } else if (action === "add") {
+      //save add as current action
+      currentAction = add;
+      previousValue = displayValue;
+      displayValue = "";
     } else if (action === "subtract") {
     } else if (action === "multiply") {
     } else if (action === "divide") {
     } else if (action === "equals") {
+      const result = operate(currentAction, previousValue, displayValue);
+      console.log(currentAction, displayValue, previousValue);
     }
   }
 });
